@@ -48,8 +48,8 @@ Now you can run your application by running: `npm start`
 If you have finished all the previous tasks, you can do the next ones:
 
 1. When displaying the UserList (http://localhost:3000/#/users):
-  1. If the screen is LARGE (you can use { LARGE } from 'material-ui/utils/withWidth'), UserList should only take the 50% left of the view. The 50% on the right should be empty, so UserProfile (e.g. http://localhost:3001/#/users/crazytiger134) will fill that empty space without resizing UserList.
-  2. If the screen is not LARGE and the url is http://localhost:3000/#/users, UserList should take 100% of the view
+    1. If the screen is LARGE (you can use { LARGE } from 'material-ui/utils/withWidth'), UserList should only take the 50% left of the view. The 50% on the right should be empty, so UserProfile (e.g. http://localhost:3001/#/users/crazytiger134) will fill that empty space without resizing UserList.
+    2. If the screen is not LARGE and the url is http://localhost:3000/#/users, UserList should take 100% of the view
 
 2. When displaying the UserProfile (e.g. http://localhost:3001/#/users/crazytiger134). If the screen is not LARGE (you can use { LARGE } from 'material-ui/utils/withWidth'), you should only display UserProfile and "hide" UserList
 
