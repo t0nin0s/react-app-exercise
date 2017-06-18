@@ -23,10 +23,10 @@ Now you can run your application by running: `npm start`
 ## Exercise
 
 1. Implement the following route http://localhost:3000/#/workshops so it renders src/components/workshop/WorkshopList. Hint, you need to edit 2 files:
-    1. One file is the one where you define the <Route>. What file is that? Identify the component that is going to be the parent of WorkshopList
-    2. The second file is src/components/layout/NavDrawer.js, edit the <MenuItem>
+    1. One file is the one where you define the &lt;Route&gt;. What file is that? Identify the component that is going to be the parent of WorkshopList
+    2. The second file is src/components/layout/NavDrawer.js, edit the &lt;MenuItem&gt;
 
-2. Refactor the last <Route> in src/components/App.js (the one that renders the "not found page"), so it uses the src/components/NotFound.js component. You can use this url for testing http://localhost:3000/#/this-page-does-not-exist
+2. Refactor the last &lt;Route&gt; in src/components/App.js (the one that renders the "not found page"), so it uses the src/components/NotFound.js component. You can use this url for testing http://localhost:3000/#/this-page-does-not-exist
 
 3. Refactor UserList so it implements the [container component pattern](https://medium.com/@learnreact/container-components-c0e67432e005). You have a UserListContainer file with some comments and tips. Hint: You also need to change src/components/App.js
 
