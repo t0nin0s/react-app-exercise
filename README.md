@@ -39,7 +39,7 @@ Now you can run your application by running: `npm start`
     2. Handle the onClick button to validate the inputs. For validation you can use password: 1234 and username: reactfanboy
     3. If the validation is correct redirect the user to the home page. Hint: you need the router. To inject the router use withRouter from 'react-router-dom'.
 
-8. Upgrade all the components that you can to stateless components (components as functions instead of classes). Components should be stateless components if either i) don't have state or ii) don't use a livecycle method. Further reading (https://medium.com/@dan_abramov/smart-and-dumb-components-7ca2f9a7c7d0#.oy1l2u2ew)
+8. Make all the components that you can stateless components (components as functions instead of classes). Components should be stateless components if either i) don't have state or ii) don't use a livecycle method. Further reading (https://medium.com/@dan_abramov/smart-and-dumb-components-7ca2f9a7c7d0#.oy1l2u2ew)
 
 ## Extra bonus
 
