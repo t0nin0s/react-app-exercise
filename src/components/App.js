@@ -26,7 +26,6 @@ class App extends Component {
     const styles = {
       appBar: {
         position: 'fixed',
-        // zIndex: muiTheme.zIndex.appBar + 1,
         top: 0,
         color: typography.textFullWhite
       },

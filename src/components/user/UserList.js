@@ -4,8 +4,8 @@ import { ListItem } from 'material-ui/List'
 import ActionGrade from 'material-ui/svg-icons/action/grade'
 import Avatar from 'material-ui/Avatar'
 import { pinkA200 } from 'material-ui/styles/colors'
-import withWidth from 'material-ui/utils/withWidth'
-import { Route } from 'react-router-dom'
+import withWidth, { LARGE } from 'material-ui/utils/withWidth'
+import { Route, Switch } from 'react-router-dom'
 
 import View from '../layout/View'
 import UserProfile from './UserProfile'
@@ -52,10 +52,14 @@ class UserList extends Component {
     return (
       <View style={{ display: 'flex' }}>
         <Route
+          exact={width < LARGE}
           path={`${match.url}`}
           render={() => listItems }
         />
-        <Route path={`${match.url}/:username`} component={UserProfile} />
+        <Switch>
+          <Route path={`${match.url}/:username`} component={UserProfile} />
+          <Route exact path={width < LARGE ? `/` : null} component={View} />
+        </Switch>
       </View>
     )
   }
