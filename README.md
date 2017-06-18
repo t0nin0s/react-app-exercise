@@ -53,7 +53,7 @@ If you have finished all the previous tasks, you can do the next ones:
 
 ## Data fetching libraries
 
-This project is using the following fetch polyfill https://github.com/github/fetchFor. There are other options if you want to change it. You can have a look to some of the available libraries here http://andrewhfarmer.com/ajax-libraries/
+This project is using the following fetch polyfill https://github.com/github/fetch. There are other options if you want to change it. You can have a look to some of the available libraries here http://andrewhfarmer.com/ajax-libraries/
 
 ## License
 
