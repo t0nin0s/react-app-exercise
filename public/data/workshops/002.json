@@ -1,0 +1,19 @@
+{
+  "id": "002",
+  "title": "React Master class",
+  "url": "https://leanjs.com/training/react-redux-graphql-london",
+  "price": "£595",
+  "students" : "20",
+  "instructors": [
+    {
+      "name":"Alex Lobera",
+      "url": "https://github.com/alexlbr",
+      "avatar": "https://pbs.twimg.com/profile_images/1540939151/whereIsAlexWithGlasses_400x400.jpg"
+    },
+    {
+      "name":"Richard Moss",
+      "url": "https://github.com/ric9176",
+      "avatar": "https://avatars3.githubusercontent.com/u/12503996?v=3&s=460"
+    }
+  ]
+}
