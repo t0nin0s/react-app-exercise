@@ -26,7 +26,6 @@ class App extends Component {
     const styles = {
       appBar: {
         position: 'fixed',
-        // zIndex: muiTheme.zIndex.appBar + 1,
         top: 0,
         color: typography.textFullWhite
       },
@@ -82,7 +81,6 @@ class App extends Component {
             <Route exact path="/" component={Dashboard} />
             <Route path="/users" component={UserProfile} />
             <Route path="/login" component={Login} />
-            <Route path="/workshops" component={WorkshopList} />
             <Route render={({ location }) => (
                 <h3>Page not found <code>{location.pathname}</code></h3>
               )} />
