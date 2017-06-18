@@ -34,7 +34,7 @@ Now you can run your application by running: `npm start`
 
 6. Page not found (http://localhost:3000/#/this-page-does-not-exist) and http://localhost:3001/#/login should not display the NavDrawer and AppBar
 
-7. Finish implementation of Login Component (located in src/components/Login.js). Requirements:
+7. Finish the implementation of Login Component (located in src/components/Login.js). Requirements:
     1. The state of the inputs should be managed by the Login component (is that controlled or uncontrolled components?). Hint: use the onChange event in the inputs
     2. Handle the onClick button to validate the inputs. For validation you can use password: 1234 and username: reactfanboy
     3. If the validation is correct redirect the user to the home page. Hint: you need the router. To inject the router use withRouter from 'react-router-dom'.
