@@ -14,9 +14,7 @@ You need to have `node` (at least version 4.4.5) and git installed in your compu
 
 Clone [this repository](https://github.com/leanjscom/react-app) and run `npm start`
 
-`git clone https://github.com/leanjscom/react-app`
-`cd react-course`
-`yarn install`
+`git clone https://github.com/leanjscom/react-app-exercise && cd react-app-exercise && yarn install`
 
 Now you can run your application by running: `npm start`
 
