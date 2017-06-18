@@ -2,11 +2,11 @@ import React, { Component } from 'react'
 import AppBar from 'material-ui/AppBar'
 import { pink700 } from 'material-ui/styles/colors'
 import NavDrawer from './layout/NavDrawer'
-import { spacing, typography } from 'material-ui/styles'
+import { typography } from 'material-ui/styles'
 import withWidth, { LARGE } from 'material-ui/utils/withWidth'
 import { Route, Switch } from 'react-router-dom'
 
-import UserProfile from './user/UserList'
+import UserListContainer from './user/UserListContainer'
 import WorkshopList from './workshop/WorkshopList'
 import Dashboard from './dashboard'
 import NotFound from './NotFound'
@@ -79,12 +79,10 @@ class App extends Component {
         <div className="view-container" style={styles.app}>
           <Switch>
             <Route exact path="/" component={Dashboard} />
-            <Route path="/users" component={UserProfile} />
+            <Route path="/users" component={UserListContainer} />
             <Route path="/login" component={Login} />
             <Route path="/workshops" component={WorkshopList} />
-            <Route render={({ location }) => (
-                <h3>Page not found <code>{location.pathname}</code></h3>
-              )} />
+            <Route component={NotFound} />
           </Switch>
         </div>
       </div>

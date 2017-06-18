@@ -37,12 +37,11 @@ class UserProfile extends Component {
     }
     let fullname = ''
     let email = ''
-    let gender = ''
 
     if (user){
       fullname = `${user.name.title} ${user.name.first} ${user.name.last}`
       email = user.email
-      gender = user.gender
+
     }
 
     return (

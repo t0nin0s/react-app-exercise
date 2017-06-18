@@ -1,71 +1,49 @@
-import React, { Component } from 'react'
+import React from 'react'
 import PropTypes from 'prop-types'
 import { ListItem } from 'material-ui/List'
 import ActionGrade from 'material-ui/svg-icons/action/grade'
 import Avatar from 'material-ui/Avatar'
 import { pinkA200 } from 'material-ui/styles/colors'
 import withWidth, { LARGE } from 'material-ui/utils/withWidth'
-import { Route, Switch } from 'react-router-dom'
+import { Route, Switch, withRouter } from 'react-router-dom'
 
 import View from '../layout/View'
 import UserProfile from './UserProfile'
 
-class UserList extends Component {
-  constructor() {
-    super()
-    this.state = {
-      users: []
-    }
+const UserList = ({ users = [], match, history, width }) => {
+  const showUserProfile = (user) => {
+    history.push(`/users/${user.username}`)
   }
 
-  componentDidMount() {
-    fetch('/data/users.js', {
-        method: 'get'
-    }).then((response) => {
-        return response.json()
-    }).then((data) => {
-        this.setState({ users: data })
-    }).catch((err)=> {
-        console.log(err)
-    })
-  }
-
-  showUserProfile(user) {
-    this.props.history.push(`/users/${user.username}`)
-  }
-
-  render() {
-    const { match, width } = this.props
-    const listItems = (
-      <View>
-        { this.state.users.map(user => (
-          <ListItem
-            onClick={this.showUserProfile.bind(this, user)} key={user.username} style={{color: "black"}}
-            primaryText={ `${user.name.first} ${user.name.last}`}
-            leftIcon={<ActionGrade color={pinkA200} />}
-            rightAvatar={<Avatar src={`images/${user.username}_sm.jpg`} />}
-          />
-        ))}
-      </View>
-    )
-
-    return (
-      <View style={{ display: 'flex' }}>
-        <Route
-          exact={width < LARGE}
-          path={`${match.url}`}
-          render={() => listItems }
+  const listItems = (
+    <View>
+      { users.map(user => (
+        <ListItem
+          onClick={() => { showUserProfile(user) }} key={user.username} style={{color: "black"}}
+          primaryText={ `${user.name.first} ${user.name.last}`}
+          leftIcon={<ActionGrade color={pinkA200} />}
+          rightAvatar={<Avatar src={`images/${user.username}_sm.jpg`} />}
         />
-        <Switch>
-          <Route path={`${match.url}/:username`} component={UserProfile} />
-          <Route exact path={width < LARGE ? `/` : null} component={View} />
-        </Switch>
-      </View>
-    )
-  }
+      ))}
+    </View>
+  )
+
+  return (
+    <View style={{ display: 'flex' }}>
+      <Route
+        exact={width < LARGE}
+        path={`${match.url}`}
+        render={() => listItems }
+      />
+      <Switch>
+        <Route path={`${match.url}/:username`} component={UserProfile} />
+        <Route exact path={width < LARGE ? `/` : null} component={View} />
+      </Switch>
+    </View>
+  )
 }
 
-export default withWidth()(UserList)
+export default withWidth()(withRouter(UserList))
 
 UserList.contextTypes = {
   router: PropTypes.object.isRequired
