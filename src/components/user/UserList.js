@@ -8,7 +8,7 @@ import withWidth, { LARGE } from 'material-ui/utils/withWidth'
 import { Route, Switch, withRouter } from 'react-router-dom'
 
 import View from '../layout/View'
-import UserProfile from './UserProfile'
+import UserProfileContainer from './UserProfileContainer'
 
 const UserList = ({ users = [], match, history, width }) => {
   const showUserProfile = (user) => {
@@ -36,7 +36,7 @@ const UserList = ({ users = [], match, history, width }) => {
         render={() => listItems }
       />
       <Switch>
-        <Route path={`${match.url}/:username`} component={UserProfile} />
+        <Route path={`${match.url}/:username`} component={UserProfileContainer} />
         <Route exact path={width < LARGE ? `/` : null} component={View} />
       </Switch>
     </View>
