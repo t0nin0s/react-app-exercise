@@ -14,11 +14,11 @@ const muiTheme = getMuiTheme(theme)
 const Root = () => (
   <MuiThemeProvider muiTheme={muiTheme}>
     <Router>
-      <div>
+      <Switch>
+        <Route exact path="/login" component={Login} />
         <Route path="/" component= {App} />
-        <Route path="/login" component={Login} />
         <Route component={NotFound} />
-      </div>
+      </Switch>
     </Router>
   </MuiThemeProvider>
 )
