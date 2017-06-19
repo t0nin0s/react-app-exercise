@@ -36,25 +36,19 @@ class UserList extends Component {
 
   render() {
     const { match, width } = this.props
-    const listItems = (
-      <View>
-        { this.state.users.map(user => (
-          <ListItem
-            onClick={this.showUserProfile.bind(this, user)} key={user.username} style={{color: "black"}}
-            primaryText={ `${user.name.first} ${user.name.last}`}
-            leftIcon={<ActionGrade color={pinkA200} />}
-            rightAvatar={<Avatar src={`images/${user.username}_sm.jpg`} />}
-          />
-        ))}
-      </View>
-    )
-
+    
     return (
       <View style={{ display: 'flex' }}>
-        <Route
-          path={`${match.url}`}
-          render={() => listItems }
-        />
+        <View>
+          { this.state.users.map(user => (
+            <ListItem
+              onClick={this.showUserProfile.bind(this, user)} key={user.username} style={{color: "black"}}
+              primaryText={ `${user.name.first} ${user.name.last}`}
+              leftIcon={<ActionGrade color={pinkA200} />}
+              rightAvatar={<Avatar src={`images/${user.username}_sm.jpg`} />}
+            />
+          ))}
+        </View>
         <Route path={`${match.url}/:username`} component={UserProfile} />
       </View>
     )
