@@ -32,7 +32,7 @@ Now you can run your application by running: `npm start`
 
 5. Implement WorkshopList and WorkshopListContainer using this data  http://localhost:3000/data/workshops.js
 
-6. Page not found (http://localhost:3000/#/this-page-does-not-exist) and http://localhost:3001/#/login should not display the NavDrawer and AppBar
+6. Login (http://localhost:3000/#/login) should not display the NavDrawer and AppBar
 
 7. Finish the implementation of the Login Component (located in src/components/Login.js). Requirements:
     1. The state of the inputs should be managed by the Login component (is that a controlled or uncontrolled component?). Hint: use the onChange event in the inputs
