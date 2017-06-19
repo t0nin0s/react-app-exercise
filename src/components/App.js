@@ -9,8 +9,7 @@ import { Route, Switch } from 'react-router-dom'
 import UserListContainer from './user/UserListContainer'
 import WorkshopListContainer from './workshop/WorkshopListContainer'
 import Dashboard from './dashboard'
-import NotFound from './NotFound'
-import Login from './Login'
+
 
 class App extends Component {
   constructor() {
@@ -80,9 +79,7 @@ class App extends Component {
           <Switch>
             <Route exact path="/" component={Dashboard} />
             <Route path="/users" component={UserListContainer} />
-            <Route path="/login" component={Login} />
             <Route path="/workshops" component={WorkshopListContainer} />
-            <Route component={NotFound} />
           </Switch>
         </div>
       </div>
