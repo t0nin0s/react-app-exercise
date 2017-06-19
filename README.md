@@ -1,7 +1,7 @@
 # ReactJS fundamentals
 
 ## Exercise objectives
-On completion of this exercise each student will understand:
+On completion of this exercise students will understand:
 - Some basic React patterns
 - Routing with [React Router v4](https://reacttraining.com/react-router/web/guides/philosophy)
 - Data fetching in React
@@ -21,7 +21,7 @@ Now you can run your application by running: `npm start`
 ## Exercise
 
 1. Implement the following route http://localhost:3000/#/workshops so it renders src/components/workshop/WorkshopList. Hint, you need to edit 2 files:
-    1. One file is the one where you define the /workshops &lt;Route&gt;. What file is that? Identify the component that is going to be the parent of WorkshopList
+    1. One file is the one where you define the /workshops &lt;Route&gt;. Which file is that? Identify the component that is going to be the parent of WorkshopList
     2. The second file is src/components/layout/NavDrawer.js, edit the &lt;MenuItem&gt;
 
 2. Refactor the last &lt;Route&gt; in src/components/App.js (the one that renders the "not found page"), so it uses the src/components/NotFound.js component. You can use this url for testing http://localhost:3000/#/this-page-does-not-exist
@@ -34,26 +34,26 @@ Now you can run your application by running: `npm start`
 
 6. Login (http://localhost:3000/#/login) should not display the NavDrawer and AppBar
 
-7. Finish the implementation of Login Component (located in src/components/Login.js). Requirements:
-    1. The state of the inputs should be managed by the Login component (is that controlled or uncontrolled components?). Hint: use the onChange event in the inputs
+7. Finish the implementation of the Login Component (located in src/components/Login.js). Requirements:
+    1. The state of the inputs should be managed by the Login component (is that a controlled or uncontrolled component?). Hint: use the onChange event in the inputs
     2. Handle the onClick button to validate the inputs. For validation you can use password: 1234 and username: reactfanboy
     3. If the validation is correct redirect the user to the home page. Hint: you need the router. To inject the router use withRouter from 'react-router-dom'.
 
-8. Make all the components that you can stateless components (components as functions instead of classes). Components should be stateless components if either i) don't have state or ii) don't use a livecycle method. Further reading (https://medium.com/@dan_abramov/smart-and-dumb-components-7ca2f9a7c7d0#.oy1l2u2ew)
+8. Make all components where possible stateless components (components as functions instead of classes). Components should be stateless components if either i) they don't manage state or ii) they don't use a livecycle method. Further reading (https://medium.com/@dan_abramov/smart-and-dumb-components-7ca2f9a7c7d0#.oy1l2u2ew)
 
 ## Extra bonus
 
-If you have finished all the previous tasks, you can do the next ones:
+If you have finished all the previous tasks, you can do the following:
 
 1. When displaying the UserList (http://localhost:3000/#/users):
-    1. If the screen is LARGE (you can use { LARGE } from 'material-ui/utils/withWidth'), UserList should only take the 50% left of the view. The 50% on the right should be empty, so UserProfile (e.g. http://localhost:3001/#/users/crazytiger134) will fill that empty space without resizing UserList.
-    2. If the screen is not LARGE and the url is http://localhost:3000/#/users, UserList should take 100% of the view
+    1. If the screen is LARGE (you can use { LARGE } from 'material-ui/utils/withWidth'), UserList should only take up 50% left of the view. The 50% on the right should be empty, so UserProfile (e.g. http://localhost:3001/#/users/crazytiger134) will fill that empty space without resizing UserList.
+    2. If the screen is not LARGE and the url is http://localhost:3000/#/users, UserList should take up 100% of the view
 
 2. When displaying the UserProfile (e.g. http://localhost:3001/#/users/crazytiger134). If the screen is not LARGE (you can use { LARGE } from 'material-ui/utils/withWidth'), you should only display UserProfile and "hide" UserList
 
 ## Data fetching libraries
 
-This project is using the following fetch polyfill https://github.com/github/fetch. There are other options if you want to change it. You can have a look to some of the available libraries here http://andrewhfarmer.com/ajax-libraries/
+This project is using the following fetch polyfill: https://github.com/github/fetch. There are other options if you want to change it. You can have a look at some of the available libraries here: http://andrewhfarmer.com/ajax-libraries/
 
 ## License
 
