@@ -1,5 +1,6 @@
 import React, {Component} from 'react'
 import WorkshopInfo from './WorkshopInfo'
+import PropTypes from 'prop-types'
 
 class WorkshopInfoContainer extends Component {
   constructor() {
@@ -33,6 +34,10 @@ class WorkshopInfoContainer extends Component {
       />
     )
   }
+}
+
+WorkshopInfoContainer.propTypes = {
+  match: PropTypes.object.isRequired
 }
 
 export default WorkshopInfoContainer

@@ -5,7 +5,7 @@ import {
 } from 'material-ui/Card'
 import FlatButton from 'material-ui/FlatButton'
 
-const WorkshopInfo = ( { workshop, workshopID, fetchWorkshop}) => {
+const WorkshopInfo = ({ workshop, workshopID, fetchWorkshop }) => {
 
   let instructors = ''
   let title = ''
@@ -18,10 +18,10 @@ const WorkshopInfo = ( { workshop, workshopID, fetchWorkshop}) => {
   if (workshop) {
     instructors = workshop.instructors.map((instructor, index) => (
       <CardHeader
-      key={index}
-      title={instructor.name}
-      subtitle={instructor.url}
-      avatar={instructor.avatar}
+        key={index}
+        title={instructor.name}
+        subtitle={instructor.url}
+        avatar={instructor.avatar}
       />
     ))
     title = `${workshop.title}  -  ${workshop.price}`

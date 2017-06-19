@@ -6,7 +6,7 @@ class UserProfileContainer extends Component {
   constructor() {
     super()
     this.state = { username: null }
-    this.fetchUser = this.fetchWorkshop.bind(this)
+    this.fetchUser = this.fetchUser.bind(this)
   }
 
   componentDidMount() {
