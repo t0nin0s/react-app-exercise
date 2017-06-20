@@ -4,6 +4,7 @@ import {
   CardTitle
 } from 'material-ui/Card'
 import FlatButton from 'material-ui/FlatButton'
+import PropTypes from 'prop-types'
 
 const WorkshopInfo = ({ workshop }) => {
   let instructors = ''
@@ -35,7 +36,9 @@ const WorkshopInfo = ({ workshop }) => {
   )
 }
 
-
+WorkshopInfo.PropTypes = {
+  workshop: PropTypes.object.isRequired
+}
 
 
 export default WorkshopInfo

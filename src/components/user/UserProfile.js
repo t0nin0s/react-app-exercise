@@ -1,4 +1,5 @@
 import React from 'react'
+import PropTypes from 'prop-types'
 import {
   Card, CardActions, CardHeader, CardMedia, CardTitle
 } from 'material-ui/Card'
@@ -33,6 +34,10 @@ const UserProfile = ({ user }) => {
       </Card>
     </View>
   )
+}
+
+UserProfile.propTypes = {
+  user: PropTypes.object.isRequired
 }
 
 export default UserProfile

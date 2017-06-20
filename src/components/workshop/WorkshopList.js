@@ -43,6 +43,10 @@ const WorkshopList = ({ workshops = [], match, history, width}) => {
 
 export default withWidth()(withRouter(WorkshopList))
 
-WorkshopList.contextTypes = {
-  router: PropTypes.object.isRequired
+
+WorkshopList.propTypes = {
+  history: PropTypes.object.isRequired,
+  workshops: PropTypes.array.isRequired,
+  width: PropTypes.number.isRequired,
+  match: PropTypes.object.isRequired
 }

@@ -45,6 +45,9 @@ const UserList = ({ users = [], match, history, width }) => {
 
 export default withWidth()(withRouter(UserList))
 
-UserList.contextTypes = {
-  router: PropTypes.object.isRequired
+UserList.propTypes = {
+  users: PropTypes.array.isRequired,
+  history: PropTypes.object.isRequired,
+  match: PropTypes.object.isRequired,
+  width: PropTypes.number.isRequired
 }

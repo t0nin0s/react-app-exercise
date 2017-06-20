@@ -1,6 +1,5 @@
 import React, {Component} from 'react'
 import WorkshopList from './WorkshopList'
-import PropTypes from 'prop-types'
 
 class WorkshopListContainer extends Component {
   constructor() {
@@ -32,7 +31,3 @@ class WorkshopListContainer extends Component {
 }
 
 export default WorkshopListContainer
-
-WorkshopListContainer.contextTypes = {
-  router: PropTypes.object.isRequired
-}
