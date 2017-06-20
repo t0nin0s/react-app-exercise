@@ -25,7 +25,6 @@ class WorkshopListContainer extends Component {
   render() {
     return (
       <WorkshopList
-        {...this.props}
         workshops={this.state.workshops}
       />
     )

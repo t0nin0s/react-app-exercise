@@ -13,6 +13,12 @@ class WorkshopInfoContainer extends Component {
     this.fetchWorkshop(this.props.match.params.workshop)
   }
 
+  componentWillReceiveProps(nextProps) {
+   if (this.props.match.params.workshop !== nextProps.match.params.workshop) {
+     this.fetchWorkshop(this.props.match.params.workshop)
+   }
+ }
+
   fetchWorkshop(workshop) {
     fetch(`/data/workshops/${workshop}.json`, {
       method: 'get'

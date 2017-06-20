@@ -5,18 +5,13 @@ import {
 
 import View from '../layout/View'
 
-const UserProfile = ({ user, username, fetchUser }) => {
-
-    if (user && user.username !== username) {
-      fetchUser(username)
-    }
+const UserProfile = ({ user, username }) => {
     let fullname = ''
     let email = ''
 
     if (user){
       fullname = `${user.name.title} ${user.name.first} ${user.name.last}`
       email = user.email
-
     }
 
     return (

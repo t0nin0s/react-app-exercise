@@ -5,12 +5,18 @@ import UserProfile from './UserProfile'
 class UserProfileContainer extends Component {
   constructor() {
     super()
-    this.state = { username: null }
+    this.state = { user: null }
     this.fetchUser = this.fetchUser.bind(this)
   }
 
   componentDidMount() {
     this.fetchUser(this.props.match.params.username)
+  }
+
+  componentWillReceiveProps(nextProps) {
+    if (this.props.match.params.username !== nextProps.match.params.username) {
+      this.fetchUser(nextProps.match.params.username)
+    }
   }
 
   fetchUser(username) {
@@ -29,7 +35,7 @@ class UserProfileContainer extends Component {
     return (
       <UserProfile
         fetchUser={this.fetchUser}
-        user={this.state.username}
+        user={this.state.user}
         username={this.props.match.params.username}
       />
     )

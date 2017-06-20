@@ -1,19 +1,14 @@
 import React from 'react'
 import {
   Card, CardActions, CardHeader,
-  CardMedia, CardTitle, CardText
+  CardTitle
 } from 'material-ui/Card'
 import FlatButton from 'material-ui/FlatButton'
 
-const WorkshopInfo = ({ workshop, workshopID, fetchWorkshop }) => {
-
+const WorkshopInfo = ({ workshop, workshopID }) => {
   let instructors = ''
   let title = ''
   let button = ''
-
-  if (workshop && workshop.id !== workshopID) {
-    fetchWorkshop(workshopID)
-  }
 
   if (workshop) {
     instructors = workshop.instructors.map((instructor, index) => (
