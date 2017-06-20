@@ -33,9 +33,7 @@ class WorkshopInfoContainer extends Component {
   render() {
     return (
       <WorkshopInfo
-        fetchWorkshop={this.fetchWorkshop}
         workshop={this.state.workshop}
-        workshopID={this.props.match.params.workshop}
       />
     )
   }

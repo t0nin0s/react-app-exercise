@@ -33,9 +33,7 @@ class UserProfileContainer extends Component {
   render() {
     return (
       <UserProfile
-        fetchUser={this.fetchUser}
         user={this.state.user}
-        username={this.props.match.params.username}
       />
     )
   }

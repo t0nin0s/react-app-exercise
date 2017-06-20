@@ -5,7 +5,7 @@ import {
 } from 'material-ui/Card'
 import FlatButton from 'material-ui/FlatButton'
 
-const WorkshopInfo = ({ workshop, workshopID }) => {
+const WorkshopInfo = ({ workshop }) => {
   let instructors = ''
   let title = ''
   let button = ''
