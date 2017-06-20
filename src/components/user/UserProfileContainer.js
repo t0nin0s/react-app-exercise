@@ -6,7 +6,6 @@ class UserProfileContainer extends Component {
   constructor() {
     super()
     this.state = { user: null }
-    this.fetchUser = this.fetchUser.bind(this)
   }
 
   componentDidMount() {
@@ -19,7 +18,7 @@ class UserProfileContainer extends Component {
     }
   }
 
-  fetchUser(username) {
+  fetchUser = (username) => {
     fetch(`/data/users/${username}.json`, {
         method: 'get'
     }).then((response) => {

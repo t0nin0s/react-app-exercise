@@ -6,7 +6,6 @@ class WorkshopInfoContainer extends Component {
   constructor() {
     super()
     this.state = { workshop: null }
-    this.fetchWorkshop = this.fetchWorkshop.bind(this)
   }
 
   componentDidMount() {
@@ -19,7 +18,7 @@ class WorkshopInfoContainer extends Component {
    }
  }
 
-  fetchWorkshop(workshop) {
+  fetchWorkshop = (workshop) => {
     fetch(`/data/workshops/${workshop}.json`, {
       method: 'get'
     }).then((response) => {

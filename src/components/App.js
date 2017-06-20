@@ -17,8 +17,6 @@ class App extends Component {
     this.state = {
       nav: { open: false }
     }
-    this.toggleNav = this.toggleNav.bind(this)
-    this.closeNav = this.closeNav.bind(this)
   }
 
   getStyles() {
@@ -41,11 +39,11 @@ class App extends Component {
     return styles
   }
 
-  toggleNav() {
+  toggleNav = () => {
     this.setState({ nav: { open: !this.state.nav.open } })
   }
 
-  closeNav() {
+  closeNav = () => {
     this.setState({ nav: { open: false } })
   }
 
