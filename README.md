@@ -16,7 +16,7 @@ Clone [this repository](https://github.com/leanjscom/react-app) and run `npm sta
 
 `git clone https://github.com/leanjscom/react-app-exercise && cd react-app-exercise && yarn install`
 
-Now you can run your application by running: `npm start`
+Now you can run your application by running: `yarn start`
 
 ## Exercise
 
