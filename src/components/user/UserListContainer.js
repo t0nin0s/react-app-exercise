@@ -1,4 +1,6 @@
 import React, { Component } from 'react'
+import withWidth from 'material-ui/utils/withWidth'
+
 import UserList from './UserList'
 import { fetchUsers } from '../../api/user'
 
@@ -21,9 +23,13 @@ class UserListContainer extends Component {
 
   render() {
     return (
-      <UserList users={this.state.users} />
+      <UserList
+        users={this.state.users}
+        match={this.props.match}
+        history={this.props.history}
+      />
     )
   }
 }
 
-export default UserListContainer
+export default withWidth()(UserListContainer)

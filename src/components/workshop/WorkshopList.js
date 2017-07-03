@@ -3,7 +3,7 @@ import PropTypes from 'prop-types'
 import { ListItem } from 'material-ui/List'
 import ActionGrade from 'material-ui/svg-icons/action/grade'
 import { pinkA200 } from 'material-ui/styles/colors'
-import withWidth, { LARGE } from 'material-ui/utils/withWidth'
+import { LARGE } from 'material-ui/utils/withWidth'
 import { Route, Switch, withRouter } from 'react-router-dom'
 
 import View from '../layout/View'
@@ -47,7 +47,7 @@ const WorkshopList = ({ workshops = [], match, history, width}) => {
   )
 }
 
-export default withWidth()(withRouter(WorkshopList))
+export default WorkshopList
 
 
 WorkshopList.propTypes = {

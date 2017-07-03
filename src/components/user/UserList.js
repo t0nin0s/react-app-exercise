@@ -4,7 +4,7 @@ import { ListItem } from 'material-ui/List'
 import ActionGrade from 'material-ui/svg-icons/action/grade'
 import Avatar from 'material-ui/Avatar'
 import { pinkA200 } from 'material-ui/styles/colors'
-import withWidth, { LARGE } from 'material-ui/utils/withWidth'
+import { LARGE } from 'material-ui/utils/withWidth'
 import { Route, Switch, withRouter } from 'react-router-dom'
 
 import View from '../layout/View'
@@ -49,7 +49,7 @@ const UserList = ({ users = [], match, history, width }) => {
   )
 }
 
-export default withWidth()(withRouter(UserList))
+export default UserList
 
 UserList.propTypes = {
   users: PropTypes.array.isRequired,

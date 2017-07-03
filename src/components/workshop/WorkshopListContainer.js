@@ -1,4 +1,6 @@
 import React, {Component} from 'react'
+import withWidth from 'material-ui/utils/withWidth'
+
 import WorkshopList from './WorkshopList'
 import { fetchWorkshops } from '../../api/workshop'
 
@@ -22,9 +24,11 @@ class WorkshopListContainer extends Component {
     return (
       <WorkshopList
         workshops={this.state.workshops}
+        match={this.props.match}
+        history={this.props.history}
       />
     )
   }
 }
 
-export default WorkshopListContainer
+export default withWidth()(WorkshopListContainer)

@@ -15,7 +15,7 @@ class WorkshopInfoContainer extends Component {
 
   componentWillReceiveProps(nextProps) {
    if (this.props.match.params.workshop !== nextProps.match.params.workshop) {
-     this.fetchWorkshop(this.props.match.params.workshop)
+     this.fetchWorkshop(nextProps.match.params.workshop)
    }
  }
 
