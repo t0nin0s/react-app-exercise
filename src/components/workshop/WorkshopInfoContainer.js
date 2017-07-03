@@ -1,6 +1,7 @@
 import React, {Component} from 'react'
 import WorkshopInfo from './WorkshopInfo'
 import PropTypes from 'prop-types'
+import { fetchWorkshop } from '../../api/workshop'
 
 class WorkshopInfoContainer extends Component {
   constructor() {
@@ -19,11 +20,7 @@ class WorkshopInfoContainer extends Component {
  }
 
   fetchWorkshop = (workshop) => {
-    fetch(`/data/workshops/${workshop}.json`, {
-      method: 'get'
-    }).then((response) => {
-      return response.json()
-    }).then((data) => {
+    fetchWorkshop(workshop).then((data) => {
       this.setState({workshop : data})
     }).catch((err)=> {
       console.log(err)

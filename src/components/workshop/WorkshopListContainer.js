@@ -1,5 +1,6 @@
 import React, {Component} from 'react'
 import WorkshopList from './WorkshopList'
+import { fetchWorkshops } from '../../api/workshop'
 
 class WorkshopListContainer extends Component {
   constructor() {
@@ -10,11 +11,7 @@ class WorkshopListContainer extends Component {
   }
 
   componentDidMount() {
-    fetch('/data/workshops.js', {
-      method: 'get'
-    }).then((response) => {
-      return response.json()
-    }).then((data) => {
+    fetchWorkshops().then((data) => {
       this.setState({ workshops: data })
     }).catch((err)=> {
       console.log(err)

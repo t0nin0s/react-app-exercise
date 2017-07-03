@@ -14,17 +14,23 @@ const WorkshopList = ({ workshops = [], match, history, width}) => {
     history.push(`/workshops/${workshop.id}`)
   }
 
-  const listItems = (
-    <View>
-      { workshops.map(workshop => (
-        <ListItem
-          onClick={() => { showWorkshop(workshop) }} key={workshop.id} style={{color: "black"}}
-          primaryText={ `${workshop.title}`}
-          leftIcon={<ActionGrade color={pinkA200} />}
-        />
-      ))}
-    </View>
-  )
+  let listItems
+
+  if (workshops.length === 0) {
+    listItems = <h1>Loading</h1>
+  } else {
+    listItems = (
+      <View>
+        { workshops.map(workshop => (
+          <ListItem
+            onClick={() => { showWorkshop(workshop) }} key={workshop.id} style={{color: "black"}}
+            primaryText={ `${workshop.title}`}
+            leftIcon={<ActionGrade color={pinkA200} />}
+          />
+        ))}
+      </View>
+    )
+  }
 
   return (
     <View style={{ display: 'flex' }}>

@@ -15,18 +15,24 @@ const UserList = ({ users = [], match, history, width }) => {
     history.push(`/users/${user.username}`)
   }
 
-  const listItems = (
-    <View>
-      { users.map(user => (
-        <ListItem
-          onClick={() => { showUserProfile(user) }} key={user.username} style={{color: "black"}}
-          primaryText={ `${user.name.first} ${user.name.last}`}
-          leftIcon={<ActionGrade color={pinkA200} />}
-          rightAvatar={<Avatar src={`images/${user.username}_sm.jpg`} />}
-        />
-      ))}
-    </View>
-  )
+  let listItems
+
+  if (users.length === 0) {
+    listItems = <View>Loading...</View>
+  } else {
+    listItems = (
+      <View>
+        { users.map(user => (
+          <ListItem
+            onClick={() => { showUserProfile(user) }} key={user.username} style={{color: "black"}}
+            primaryText={ `${user.name.first} ${user.name.last}`}
+            leftIcon={<ActionGrade color={pinkA200} />}
+            rightAvatar={<Avatar src={`images/${user.username}_sm.jpg`} />}
+          />
+        ))}
+      </View>
+    )
+  }
 
   return (
     <View style={{ display: 'flex' }}>

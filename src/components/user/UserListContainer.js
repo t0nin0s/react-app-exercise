@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import UserList from './UserList'
+import { fetchUsers } from '../../api/user'
 
 class UserListContainer extends Component {
   constructor() {
@@ -10,11 +11,8 @@ class UserListContainer extends Component {
   }
 
   componentDidMount() {
-    fetch('/data/users.js', {
-        method: 'get'
-    }).then((response) => {
-        return response.json()
-    }).then((data) => {
+    fetchUsers()
+    .then((data) => {
         this.setState({ users: data })
     }).catch((err)=> {
         console.log(err)
