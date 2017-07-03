@@ -17,7 +17,7 @@ const WorkshopList = ({ workshops = [], match, history, width}) => {
   let listItems
 
   if (workshops.length === 0) {
-    listItems = <h1>Loading</h1>
+    listItems = <View>Loading...</View>
   } else {
     listItems = (
       <View>
