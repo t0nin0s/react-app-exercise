@@ -1,70 +1,51 @@
 import React, { Component } from 'react'
 import PropTypes from 'prop-types'
-import { withRouter } from 'react-router-dom'
 import {
   Card, CardActions, CardHeader, CardMedia, CardTitle
 } from 'material-ui/Card'
 
 import View from '../layout/View'
 
+<<<<<<< HEAD
+const UserProfile = (props) => {
+  const { user } = props
+  let username = ''
+  let fullname = ''
+  let email = ''
+=======
 class UserProfile extends Component {
   constructor() {
     super()
-    this.state = { username: null }
+    this.state = { user: null }
   }
 
   componentDidMount() {
     this.fetchUser(this.props.match.params.username)
   }
+>>>>>>> b53d216372ee3462c9da6c043b9ffb334bfd6798
 
-  fetchUser(username) {
-    fetch(`/data/users/${username}.json`, {
-        method: 'get'
-    }).then((response) => {
-        return response.json()
-    }).then((data) => {
-        this.setState({user : data})
-    }).catch((err)=> {
-        console.log(err)
-    })
+  if (user){
+    fullname = `${user.name.title} ${user.name.first} ${user.name.last}`
+    email = user.email
+    username = user.username
   }
-
-  render() {
-    let user = this.state.user
-    let username = this.props.match.params.username
-    if (user && user.username !== username) {
-      this.fetchUser(username)
-    }
-    let fullname = ''
-    let email = ''
-
-    if (user){
-      fullname = `${user.name.title} ${user.name.first} ${user.name.last}`
-      email = user.email
-    }
-
-    return (
-      <View>
-        <Card>
-          <CardHeader
-            title={fullname}
-            subtitle={username}
-            avatar={`/images/${username}_sm.jpg`}
-          />
-          <CardMedia
-            overlay={<CardTitle title={email} />}
-          >
-            <img alt={username} src={`/images/${username}_lg.jpg`} />
-          </CardMedia>
-          <CardActions />
-        </Card>
-      </View>
-    )
-  }
-}
-
-UserProfile.propTypes = {
-  match: PropTypes.object.isRequired
+  return (
+    <View>
+      <Card>
+        <CardHeader
+          title={fullname}
+          subtitle={username}
+          avatar={`/images/${username}_sm.jpg`}
+        />
+        <CardMedia
+          overlay={<CardTitle title={email} />}
+        >
+          <img alt={username} src={`/images/${username}_lg.jpg`} />
+        </CardMedia>
+        <CardActions />
+      </Card>
+    </View>
+  )
 }
 
 export default UserProfile

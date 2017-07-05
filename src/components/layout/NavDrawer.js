@@ -25,6 +25,7 @@ class NavDrawer extends Component {
           title="Course Manager"
         />
         <MenuItem onClick={() => { this.menuItemClicked('/users') }}>Users</MenuItem>
+        <MenuItem onClick={() => { this.menuItemClicked('/workshops') }}>Workshop</MenuItem>
         <MenuItem>Courses</MenuItem>
       </Drawer>
     )

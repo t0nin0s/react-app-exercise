@@ -6,11 +6,15 @@ import { spacing, typography } from 'material-ui/styles'
 import withWidth, { LARGE } from 'material-ui/utils/withWidth'
 import { Route, Switch } from 'react-router-dom'
 
-import UserProfile from './user/UserList'
+<<<<<<< HEAD
+import UserListContainer from './user/UserListContainer'
+import WorkshopListContainer from './workshop/WorkshopListContainer'
+=======
+import UserList from './user/UserList'
 import WorkshopList from './workshop/WorkshopList'
+>>>>>>> b53d216372ee3462c9da6c043b9ffb334bfd6798
 import Dashboard from './dashboard'
 import NotFound from './NotFound'
-import Login from './Login'
 
 class App extends Component {
   constructor() {
@@ -38,7 +42,6 @@ class App extends Component {
         backgroundColor: pink700
       }
     }
-
     return styles
   }
 
@@ -62,6 +65,31 @@ class App extends Component {
     }
 
     return (
+<<<<<<< HEAD
+      <div>
+        <div className="main-view">
+          <AppBar
+            title="Course Manager"
+            iconClassNameRight="muidocs-icon-navigation-expand-more"
+            onLeftIconButtonTouchTap={this.toggleNav}
+            className="app-bar"
+          />
+          <NavDrawer
+            open={navDrawerOpen}
+            toggleNav={this.toggleNav}
+            closeNav={this.closeNav}
+            styles={styles}
+            docked={docked}
+          />
+          <div className="view-container" style={styles.app}>
+              <Switch>
+                <Route exact path="/" component={Dashboard} />
+                <Route path="/users" component={UserListContainer} />
+                <Route path="/workshops" component={WorkshopListContainer} />
+                <Route component={NotFound} />
+              </Switch>
+          </div>
+=======
       <div className="main-view">
         <AppBar
           title="Course Manager"
@@ -79,12 +107,13 @@ class App extends Component {
         <div className="view-container" style={styles.app}>
           <Switch>
             <Route exact path="/" component={Dashboard} />
-            <Route path="/users" component={UserProfile} />
+            <Route path="/users" component={UserList} />
             <Route path="/login" component={Login} />
             <Route render={({ location }) => (
                 <h3>Page not found <code>{location.pathname}</code></h3>
               )} />
           </Switch>
+>>>>>>> b53d216372ee3462c9da6c043b9ffb334bfd6798
         </div>
       </div>
     )
