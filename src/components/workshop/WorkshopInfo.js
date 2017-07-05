@@ -14,13 +14,11 @@ class WorkshopInfo extends React.Component {
 
   componentDidMount() {
     const workshop = this.props.match.params.id
-    console.log('WSInfo DidMount about to fetch Workshop')
     this.fetchWorkshop(workshop)
   }
 
   componentWillReceiveProps(nextProps) {
     if (this.props.match.params.id !== nextProps.match.params.id) {
-      console.log('WSInfo componentWillReceiveProps about to fetch Workshop')
       this.fetchWorkshop(nextProps.match.params.id)
     }
   }

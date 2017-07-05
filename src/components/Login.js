@@ -20,9 +20,10 @@ class Login extends Component {
 
   handleSubmit = (event) => {
     event.preventDefault()
+    console.log(this.state)
     const { username, password } = this.state
-    if (this.usename === 'toninos@gmail.com' &&
-        this.password === 'secreto'
+    if (username === 'toninos@gmail.com' &&
+        password === 'secreto'
       ){
         this.props.history.push(`/`)
       } else {
