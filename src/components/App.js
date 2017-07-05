@@ -7,9 +7,12 @@ import withWidth, { LARGE } from 'material-ui/utils/withWidth'
 import { Route, Switch } from 'react-router-dom'
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 import UserListContainer from './user/UserListContainer'
 import WorkshopListContainer from './workshop/WorkshopListContainer'
 =======
+=======
+>>>>>>> b53d216372ee3462c9da6c043b9ffb334bfd6798
 import UserList from './user/UserList'
 import WorkshopList from './workshop/WorkshopList'
 >>>>>>> b53d216372ee3462c9da6c043b9ffb334bfd6798
